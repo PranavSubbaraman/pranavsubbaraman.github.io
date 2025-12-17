@@ -82,6 +82,16 @@ author:
   youtube          : # Username
   zhihu            : # Username
 
+# arXiv feed settings used on the Publications page
+arxiv_feed:
+  enabled: true                          # set to false to hide the arXiv block
+  search_query: "au:Pranav_Subbaraman"   # arXiv API search query (e.g., "au:First_Last")
+  id_list:                                # optional specific arXiv IDs to show
+    - "2511.18191"
+    - "2512.01094"
+  max_results: 10                        # number of items to request
+  preview_chars: 550                     # characters of the abstract to show
+
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
   books:

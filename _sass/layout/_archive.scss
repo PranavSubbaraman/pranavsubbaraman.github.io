@@ -243,3 +243,46 @@
     }
   }
 }
+
+/* ==========================================================================
+   arXiv feed block
+   ========================================================================== */
+.arxiv-feed {
+  margin: 1.5em 0 2em;
+  padding: 1.25em;
+  background: var(--global-bg-color, #fff);
+  border: 1px solid var(--global-border-color);
+  border-radius: $border-radius;
+}
+
+.arxiv-feed__list {
+  display: grid;
+  gap: 1em;
+}
+
+.arxiv-feed__item {
+  padding: 1em;
+  border: 1px solid var(--global-border-color);
+  border-radius: $border-radius;
+  background: var(--global-bg-darker, #f7f7f7);
+}
+
+.arxiv-feed__title {
+  margin: 0 0 0.35em;
+  font-size: $type-size-5;
+}
+
+.arxiv-feed__meta {
+  margin: 0;
+  color: var(--global-text-color-light);
+  font-size: $type-size-7;
+}
+
+.arxiv-feed__summary {
+  margin: 0.75em 0;
+  font-size: $type-size-6;
+}
+
+.arxiv-feed__link {
+  font-weight: 600;
+}

@@ -11,6 +11,12 @@ author_profile: true
 
 {% include base_path %}
 
+{% if site.arxiv_feed.enabled %}
+  <h2>arXiv Papers</h2>
+  {% include arxiv-feed.html %}
+  <script defer src="{{ '/assets/js/arxiv-feed.js' | prepend: base_path }}"></script>
+{% endif %}
+
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
   {% for category in site.publication_category  %}

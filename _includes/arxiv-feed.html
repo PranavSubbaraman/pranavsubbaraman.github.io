@@ -1,0 +1,23 @@
+{% assign arxiv_search = include.search | default: site.arxiv_feed.search_query %}
+{% assign arxiv_max = include.max | default: site.arxiv_feed.max_results | default: 10 %}
+{% assign arxiv_preview = include.preview | default: site.arxiv_feed.preview_chars | default: 500 %}
+
+{% assign arxiv_ids = nil %}
+{% if include.ids %}
+  {% assign arxiv_ids = include.ids %}
+{% elsif site.arxiv_feed.id_list %}
+  {% assign arxiv_ids = site.arxiv_feed.id_list | join: ',' %}
+{% endif %}
+
+<div class="arxiv-feed"
+     data-arxiv-feed
+     {% if arxiv_search %}data-arxiv-search="{{ arxiv_search | escape }}"{% endif %}
+     {% if arxiv_ids %}data-arxiv-ids="{{ arxiv_ids | escape }}"{% endif %}
+     data-arxiv-max="{{ arxiv_max }}"
+     data-arxiv-preview="{{ arxiv_preview }}">
+  <p class="arxiv-feed__loading">Loading arXiv papers…</p>
+  <noscript>
+    <p class="arxiv-feed__error">Enable JavaScript to see arXiv abstract previews.</p>
+  </noscript>
+</div>
+
