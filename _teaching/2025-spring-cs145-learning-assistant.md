@@ -14,3 +14,4 @@ Apr 2025 - Jun 2025
 - Led discussion sections for 80+ students; made lecture slides and instructional homework videos; worked with the TA to create practice materials for exams; responded to student questions on Piazza.
 - Applied pedagogy techniques to foster student engagement, promote inclusivity, and clearly explain complex topics.
 
+
