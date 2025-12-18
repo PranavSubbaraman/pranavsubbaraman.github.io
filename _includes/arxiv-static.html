@@ -1,0 +1,23 @@
+{% assign arxiv_papers = site.data.arxiv | default: [] %} {% if arxiv_papers.size > 0 %}
+<div class="arxiv-feed arxiv-feed--static">
+    <div class="arxiv-feed__list">
+        {% for paper in arxiv_papers %} {% assign link_url = paper.link %} {% if forloop.index0 == 1 %} {% assign link_url = "https://www.arxiv.org/abs/2512.01094" %} {% endif %} {% assign authors_text = "" %} {% if forloop.index0 == 0 %} {% assign authors_text
+        = "<strong>Pranav Subbaraman*</strong>, Shufan Li*, Siyan Zhao, Aditya Grover" %} {% elsif forloop.index0 == 1 %} {% assign authors_text = "<strong>Pranav Subbaraman*</strong>, Fang Sun*, Yue Yao, Huacong Tang, Xiao Luo, Yizhou Sun" %}
+        {% elsif paper.authors %} {% assign authors_text = paper.authors | join: ", " %} {% endif %}
+
+        <article class="arxiv-feed__item">
+            <h3 class="arxiv-feed__title">
+                <a href="{{ link_url }}" target="_blank" rel="noopener noreferrer">{{ paper.title }}</a>
+            </h3>
+            <p class="arxiv-feed__meta">
+                <span class="arxiv-feed__authors">{{ authors_text | raw }}</span> {% if paper.date %} • {{ paper.date }}{% endif %} {% if paper.category %} • {{ paper.category }}{% endif %}
+            </p>
+            {% if paper.summary %}
+            <p class="arxiv-feed__summary">{{ paper.summary }}</p>
+            {% endif %} {% if paper.link %}
+            <a class="arxiv-feed__cta" href="{{ paper.link }}" target="_blank" rel="noopener noreferrer">View on arXiv</a> {% endif %}
+        </article>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}

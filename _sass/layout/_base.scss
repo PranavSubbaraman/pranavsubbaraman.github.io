@@ -10,7 +10,7 @@ html {
 body {
   /* Set via _themes.scss */
   color: var(--global-text-color);
-  background-color: var(--global-bg-color);
+  background-color: var(--neu-bg, var(--global-bg-color));
 
   margin: 0;
   padding: $masthead-height 0 0;

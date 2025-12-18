@@ -44,4 +44,9 @@ $sidebar-screen-min-width   : 1024px;
     --global-text-color                 : #{$dark-gray};
     --global-text-color-light           : #{$light-gray};
     --global-thead-color                : #{$lighter-gray};
+    --neu-bg                            : #f5f7fb;
+    --neu-shadow-dark                   : rgba(55, 84, 170, 0.16);
+    --neu-shadow-light                  : rgba(255, 255, 255, 0.9);
+    --neu-shadow-dark-pressed           : rgba(55, 84, 170, 0.22);
+    --neu-shadow-light-pressed          : rgba(255, 255, 255, 0.7);
 }

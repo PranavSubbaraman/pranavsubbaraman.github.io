@@ -238,10 +238,10 @@ collections:
     output: true
     permalink: /:collection/:path/
   portfolio:
-    output: true
+    output: false
     permalink: /:collection/:path/
   talks:
-    output: true
+    output: false
     permalink: /:collection/:path/
 
 
@@ -258,6 +258,8 @@ defaults:
       comments: true
       share: true
       related: true
+      published: false
+      sitemap: false
   # _pages
   - scope:
       path: ""

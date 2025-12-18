@@ -7,9 +7,10 @@ redirect_from:
   - /about.html
 ---
 
+{% include base_path %}
+
 Hi! I am currently a research intern at Google and final-year CS undergrad student at UCLA. I previously was an AI/ML Intern at Apple two times. I am interested in efficient AI.
 
-You can find my works here:
+Here are my recent first-author papers:
 
-(https://arxiv.org/abs/2511.18191)
-(https://www.arxiv.org/abs/2512.01094)
+{% include arxiv-static.html %}

@@ -33,6 +33,7 @@
     var idList = container.getAttribute('data-arxiv-ids') || '';
     var maxResults = container.getAttribute('data-arxiv-max') || '10';
     var preview = container.getAttribute('data-arxiv-preview') || '500';
+    var proxyBase = 'https://api.allorigins.win/raw?url=';
 
     var renderError = function (message) {
       container.innerHTML = '<p class="arxiv-feed__error">' + message + '</p>';
@@ -49,9 +50,11 @@
       return;
     }
 
-    var url = 'https://export.arxiv.org/api/query?' + query +
+    var apiUrl = 'https://export.arxiv.org/api/query?' + query +
       '&sortBy=submittedDate&sortOrder=descending' +
       '&max_results=' + encodeURIComponent(maxResults);
+
+    var url = proxyBase + encodeURIComponent(apiUrl);
 
     container.innerHTML = '<p class="arxiv-feed__loading">Loading arXiv papers…</p>';
 
@@ -94,20 +97,24 @@
 
           var titleEl = document.createElement('h3');
           titleEl.className = 'arxiv-feed__title';
-          titleEl.textContent = title || 'Untitled arXiv submission';
+          var titleLink = document.createElement('a');
+          titleLink.href = link || '#';
+          titleLink.target = '_blank';
+          titleLink.rel = 'noopener noreferrer';
+          titleLink.textContent = title || 'Untitled arXiv submission';
+          titleEl.appendChild(titleLink);
           item.appendChild(titleEl);
 
+          var metaEl = document.createElement('p');
+          metaEl.className = 'arxiv-feed__meta';
+          var authorText = authors.length ? authors.join(', ') : '';
+          var dateText = published ? formatDate(published) : '';
           var metaBits = [];
-          if (published) metaBits.push(formatDate(published));
+          if (authorText) metaBits.push(authorText);
+          if (dateText) metaBits.push(dateText);
           if (primaryCategory) metaBits.push(primaryCategory);
-          if (authors.length) metaBits.push('Authors: ' + authors.join(', '));
-
-          if (metaBits.length) {
-            var metaEl = document.createElement('p');
-            metaEl.className = 'arxiv-feed__meta';
-            metaEl.textContent = metaBits.join(' · ');
-            item.appendChild(metaEl);
-          }
+          metaEl.textContent = metaBits.join(' • ');
+          item.appendChild(metaEl);
 
           if (summary) {
             var summaryEl = document.createElement('p');
@@ -117,15 +124,13 @@
           }
 
           if (link) {
-            var linkWrap = document.createElement('p');
             var linkEl = document.createElement('a');
-            linkEl.className = 'arxiv-feed__link';
+            linkEl.className = 'arxiv-feed__cta';
             linkEl.href = link;
             linkEl.target = '_blank';
             linkEl.rel = 'noopener noreferrer';
             linkEl.textContent = 'View on arXiv';
-            linkWrap.appendChild(linkEl);
-            item.appendChild(linkWrap);
+            item.appendChild(linkEl);
           }
 
           list.appendChild(item);

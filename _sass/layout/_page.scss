@@ -34,6 +34,53 @@
   }
 }
 
+.page.neumorphic-card {
+  position: relative;
+  margin: 1.5em auto 3em;
+  background: var(--neu-bg, var(--global-bg-color));
+  border-radius: 22px;
+  border: 1px solid var(--global-border-color);
+  box-shadow: -18px -18px 32px var(--neu-shadow-light), 18px 18px 32px var(--neu-shadow-dark);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  overflow: hidden;
+
+  @include breakpoint($medium) {
+    border-radius: 26px;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: -22px -22px 38px var(--neu-shadow-light), 22px 22px 38px var(--neu-shadow-dark);
+    border-color: var(--global-dark-border-color);
+  }
+
+  .page__inner-wrap {
+    padding: 2.25rem 1.65rem;
+
+    @include breakpoint($medium) {
+      padding: 2.75rem 2.25rem;
+    }
+
+    @include breakpoint($large) {
+      padding: 3rem 2.75rem;
+    }
+  }
+
+  header {
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--global-border-color);
+  }
+
+  .page__content {
+    p,
+    li,
+    dl {
+      font-size: 1.02em;
+    }
+  }
+}
+
 .page__title {
   margin-top: 0;
   line-height: 1;
