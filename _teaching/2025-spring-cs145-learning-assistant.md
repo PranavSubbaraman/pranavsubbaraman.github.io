@@ -1,5 +1,5 @@
 ---
-title: "Learning Assistant, Introduction to Data Mining (CS 145)"
+title: "Learning Assistant (Undergraduate TA), Introduction to Data Mining (CS 145)"
 collection: teaching
 type: "Learning Assistant (Undergraduate TA)"
 permalink: /teaching/2025-spring-cs145-learning-assistant

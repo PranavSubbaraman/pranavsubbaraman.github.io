@@ -11,5 +11,5 @@ hide_meta: true
 
 Jan 2025 - Mar 2025
 
-- Worked with Professor Sriram Sankararaman and the Teaching Assistants to grade homework, exams, and projects.
+Worked with Professor Sriram Sankararaman and the Teaching Assistants to grade homework, exams, and projects.
 

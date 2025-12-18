@@ -9,7 +9,7 @@ location: "Los Angeles, CA"
 hide_meta: true
 ---
 
-Leading tutoring and workshops for UCLA Computer Science students.
-
 Jan 2025 - Present
+
+Leading tutoring and workshops for UCLA Computer Science students.
 
