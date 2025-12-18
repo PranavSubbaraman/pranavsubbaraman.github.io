@@ -265,19 +265,12 @@
 }
 
 .arxiv-feed__item {
-  padding: 1.25em 1.1em;
-  border: 1px solid var(--global-border-color);
-  border-radius: 16px;
-  background: var(--neu-bg, #ffffff);
+  padding: 1.25em 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   color: var(--global-text-color);
-  box-shadow: -10px -10px 20px var(--neu-shadow-light), 10px 10px 20px var(--neu-shadow-dark);
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: -12px -12px 24px var(--neu-shadow-light), 12px 12px 24px var(--neu-shadow-dark);
-    border-color: var(--global-dark-border-color);
-  }
+  box-shadow: none;
 }
 
 .arxiv-feed__title {
@@ -298,7 +291,7 @@
 .arxiv-feed__meta {
   display: block;
   margin: 0 0 0.75em;
-  color: var(--global-text-color-light);
+  color: var(--global-text-color);
   font-size: $type-size-6;
   line-height: 1.4;
   white-space: normal;
