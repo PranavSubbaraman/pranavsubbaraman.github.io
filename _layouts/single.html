@@ -17,7 +17,14 @@ layout: default
 <div id="main" role="main">
   {% include sidebar.html %}
 
-  <article class="page neumorphic-card" itemscope itemtype="http://schema.org/CreativeWork">
+  {% assign article_classes = "page" %}
+  {% if page.url == "/" or page.permalink == "/" %}
+    {% assign article_classes = article_classes | append: " page--flat" %}
+  {% else %}
+    {% assign article_classes = article_classes | append: " neumorphic-card" %}
+  {% endif %}
+
+  <article class="{{ article_classes }}" itemscope itemtype="http://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}

@@ -81,6 +81,37 @@
   }
 }
 
+.page.page--flat {
+  position: relative;
+  margin: 1.5em auto 3em;
+  background: var(--global-bg-color);
+  border-radius: 16px;
+  border: 1px solid var(--global-border-color);
+  overflow: hidden;
+
+  @include breakpoint($medium) {
+    border-radius: 20px;
+  }
+
+  .page__inner-wrap {
+    padding: 2rem 1.5rem;
+
+    @include breakpoint($medium) {
+      padding: 2.5rem 2rem;
+    }
+
+    @include breakpoint($large) {
+      padding: 2.75rem 2.25rem;
+    }
+  }
+
+  header {
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--global-border-color);
+  }
+}
+
 .page__title {
   margin-top: 0;
   line-height: 1;
