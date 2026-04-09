@@ -10,7 +10,7 @@ redirect_from:
 
 {% include base_path %}
 
-Hi! I am currently a research intern at Google and final-year CS undergrad student at UCLA. I previously was an AI/ML Intern at Apple two times. I am interested in efficient AI.
+Hello! I'm Pranav, and I'm a final-year CS undergrad student at UCLA. I previously was a research intern at Google and an AI/ML Intern at Apple twice. I am interested in efficient AI.
 
 Here are my recent first-author papers:
 
