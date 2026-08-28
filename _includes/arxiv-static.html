@@ -1,4 +1,4 @@
-{% assign arxiv_papers = site.data.arxiv | default: [] %}
+{% assign arxiv_papers = site.data.arxiv | default: [] | reverse %}
 {% if arxiv_papers.size > 0 %}
 <div class="arxiv-feed arxiv-feed--static">
   <div class="arxiv-feed__list">
@@ -7,11 +7,11 @@
       {% assign authors_text = paper.authors | join: ", " %}
 
       {% if forloop.index0 == 0 %}
-        {% assign link_url = "https://arxiv.org/abs/2512.01094" %}
-        {% assign authors_text = "<strong>Pranav Subbaraman*</strong>, Shufan Li*, Siyan Zhao, Aditya Grover" %}
-      {% elsif forloop.index0 == 1 %}
         {% assign link_url = "https://arxiv.org/abs/2511.18191" %}
         {% assign authors_text = "<strong>Pranav Subbaraman*</strong>, Fang Sun*, Yue Yao, Huacong Tang, Xiao Luo, Yizhou Sun" %}
+      {% elsif forloop.index0 == 1 %}
+        {% assign link_url = "https://arxiv.org/abs/2512.01094" %}
+        {% assign authors_text = "<strong>Pranav Subbaraman*</strong>, Shufan Li*, Siyan Zhao, Aditya Grover" %}
       {% endif %}
 
       <article class="arxiv-feed__item">
