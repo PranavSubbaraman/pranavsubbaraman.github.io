@@ -18,17 +18,40 @@
         <h3 class="arxiv-feed__title">
           <a href="{{ link_url }}" target="_blank" rel="noopener noreferrer">{{ paper.title }}</a>
         </h3>
-        <p class="arxiv-feed__meta">
-          <span class="arxiv-feed__authors">{{ authors_text }}</span>{% if paper.date %} • {{ paper.date }}{% endif %}{% if paper.category %} • {{ paper.category }}{% endif %}
+        <p class="arxiv-feed__authors">{{ authors_text }}</p>
+        <p class="arxiv-feed__badges">
+          {% if paper.date %}<span class="arxiv-feed__badge"><i class="fas fa-calendar" aria-hidden="true"></i> {{ paper.date }}</span>{% endif %}
         </p>
         {% if paper.summary %}
         <p class="arxiv-feed__summary">{{ paper.summary }}</p>
         {% endif %}
-        {% if link_url %}
-        <a class="arxiv-feed__cta" href="{{ link_url }}" target="_blank" rel="noopener noreferrer">View on arXiv</a>
-        {% endif %}
+        <div class="arxiv-feed__actions">
+          {% if link_url %}
+          <a class="arxiv-feed__cta" href="{{ link_url }}" target="_blank" rel="noopener noreferrer">View on arXiv <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+          {% endif %}
+          {% if paper.summary %}
+          <button type="button" class="arxiv-feed__toggle" hidden>Show full abstract</button>
+          {% endif %}
+        </div>
       </article>
     {% endfor %}
   </div>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.arxiv-feed__item').forEach(function (item) {
+      var summary = item.querySelector('.arxiv-feed__summary');
+      var toggle = item.querySelector('.arxiv-feed__toggle');
+      if (!summary || !toggle) return;
+      // only offer the toggle when the clamped abstract actually overflows
+      if (summary.scrollHeight > summary.clientHeight + 1) {
+        toggle.hidden = false;
+        toggle.addEventListener('click', function () {
+          var expanded = summary.classList.toggle('is-expanded');
+          toggle.textContent = expanded ? 'Show less' : 'Show full abstract';
+        });
+      }
+    });
+  });
+</script>
 {% endif %}

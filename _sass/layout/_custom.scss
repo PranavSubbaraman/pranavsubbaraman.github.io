@@ -205,6 +205,9 @@ h1, h2, h3, h4, h5, h6 {
 .author__avatar {
   img {
     max-width: 150px;
+    aspect-ratio: 1 / 1; /* the source photo is not square; crop it to a clean circle */
+    object-fit: cover;
+    padding: 0;
     border: 3px solid var(--global-surface-color, var(--global-bg-color));
     box-shadow: 0 0 0 2px var(--global-link-color), 0 8px 20px rgba(0, 0, 0, 0.12);
   }
@@ -285,31 +288,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/*
-   arXiv feed cards on the homepage
-   ========================================================================== */
-
-.arxiv-feed__item {
-  padding: 1.25em 1.4em;
-  border: 1px solid var(--global-border-color);
-  border-radius: 12px;
-  background: var(--global-surface-color, var(--global-bg-color));
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+/* beat the generic content-link underline rules */
+a.arxiv-feed__cta {
+  text-decoration: none;
 
   &:hover {
-    border-color: var(--global-dark-border-color);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
+    text-decoration: none;
   }
-}
-
-.arxiv-feed__meta {
-  color: var(--global-text-color-light);
-}
-
-.arxiv-feed__summary {
-  color: var(--global-text-color);
-  opacity: 0.92;
 }
 
 /*
