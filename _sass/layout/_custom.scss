@@ -207,9 +207,12 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 150px;
     aspect-ratio: 1 / 1; /* the source photo is not square; crop it to a clean circle */
     object-fit: cover;
-    padding: 0;
-    border: 3px solid var(--global-surface-color, var(--global-bg-color));
-    box-shadow: 0 0 0 2px var(--global-link-color), 0 8px 20px rgba(0, 0, 0, 0.12);
+    /* draw the ring inside the box: the sidebar clips horizontal overflow at
+       desktop (overflow-y: auto), which cut off an outer box-shadow ring */
+    padding: 3px;
+    background: var(--global-surface-color, var(--global-bg-color));
+    border: 2px solid var(--global-link-color);
+    box-shadow: none;
   }
 }
 
