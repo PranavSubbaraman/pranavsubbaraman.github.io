@@ -1,0 +1,335 @@
+/* ==========================================================================
+   SITE-WIDE POLISH OVERRIDES
+   Imported last from assets/css/main.scss so these win over the theme
+   defaults. Uses the --global-* custom properties so both light and dark
+   themes are covered.
+   ========================================================================== */
+
+/*
+   Base typography
+   ========================================================================== */
+
+html {
+  background-color: var(--global-bg-color);
+}
+
+body {
+  background-color: var(--global-bg-color);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+/*
+   Masthead / navigation
+   ========================================================================== */
+
+.masthead {
+  border-bottom: 1px solid var(--global-border-color);
+  background-color: color-mix(in srgb, var(--global-bg-color) 88%, transparent);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+
+  &__inner-wrap {
+    padding: 0.75em 1em;
+  }
+}
+
+.greedy-nav {
+  background: transparent;
+
+  a {
+    text-decoration: none;
+    font-weight: 500;
+
+    &.site-title {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+  }
+
+  .visible-links a {
+    position: relative;
+
+    &:before {
+      height: 3px;
+      border-radius: 3px;
+      background: var(--global-link-color);
+    }
+  }
+}
+
+/* dark-mode toggle in the nav */
+.masthead__theme-toggle {
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2em;
+    height: 2.2em;
+    border-radius: 50%;
+    border: 1px solid var(--global-border-color);
+    color: var(--global-masthead-link-color);
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+
+    &:before {
+      display: none; /* no underline animation on the icon button */
+    }
+
+    &:hover {
+      color: var(--global-link-color);
+      border-color: var(--global-link-color);
+      background-color: var(--global-accent-soft, transparent);
+    }
+  }
+}
+
+
+/*
+   Page titles & meta
+   ========================================================================== */
+
+.page__title {
+  font-size: $type-size-2;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  padding-bottom: 0.4em;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2.2em;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--global-link-color);
+  }
+}
+
+.page__meta,
+.page__date {
+  color: var(--global-text-color-light);
+}
+
+/*
+   Archive entries (Teaching, Talks, list pages) as cards
+   ========================================================================== */
+
+.list__item {
+  margin-bottom: 1.25em;
+
+  .archive__item {
+    padding: 1.25em 1.4em;
+    border: 1px solid var(--global-border-color);
+    border-radius: 12px;
+    background: var(--global-surface-color, var(--global-bg-color));
+    transition: border-color 0.2s ease, background-color 0.2s ease,
+      box-shadow 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      background: var(--global-surface-color-hover, var(--global-bg-color));
+      border-color: var(--global-dark-border-color);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+
+      .archive__item-title {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .archive__item-title {
+    margin-top: 0;
+    font-size: $type-size-4;
+    font-weight: 700;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        color: var(--global-link-color);
+      }
+    }
+  }
+
+  .archive__item-excerpt {
+    font-size: 0.85em;
+
+    /* the lone "Apr 2025 - Jun 2025" style date-range line */
+    > p:first-child {
+      margin-top: 0.25em;
+      margin-bottom: 0.75em;
+      font-size: 0.92em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--global-text-color-light);
+    }
+
+    ul {
+      margin-top: 0;
+      padding-left: 1.2em;
+
+      li {
+        margin-bottom: 0.35em;
+      }
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* keep link underlines inside cards subtle */
+.archive a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/*
+   Author sidebar
+   ========================================================================== */
+
+.author__avatar {
+  img {
+    max-width: 150px;
+    border: 3px solid var(--global-surface-color, var(--global-bg-color));
+    box-shadow: 0 0 0 2px var(--global-link-color), 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.author__name {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.author__bio {
+  color: var(--global-text-color-light);
+  line-height: 1.5;
+}
+
+/* The Follow button was removed, so keep the links visible at every width
+   instead of behind its dropdown */
+.author__urls {
+  display: block !important;
+  position: static;
+  margin-top: 0.5em;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  z-index: auto;
+
+  &:before,
+  &:after {
+    display: none;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: var(--global-link-color);
+      text-decoration: none;
+    }
+  }
+}
+
+.author__urls-wrapper {
+  cursor: default;
+}
+
+/*
+   Buttons
+   ========================================================================== */
+
+.btn {
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 0.55em 1.2em;
+  transition: transform 0.16s ease, box-shadow 0.16s ease,
+    background-color 0.16s ease, color 0.16s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &--info {
+    background-color: var(--global-accent-soft, rgba(29, 127, 158, 0.1));
+    color: var(--global-link-color) !important;
+    border: 1px solid var(--global-border-color) !important;
+
+    &:visited {
+      background-color: var(--global-accent-soft, rgba(29, 127, 158, 0.1));
+      color: var(--global-link-color) !important;
+    }
+
+    &:hover {
+      background-color: var(--global-link-color);
+      color: var(--global-bg-color) !important;
+      border-color: var(--global-link-color) !important;
+    }
+  }
+}
+
+/*
+   arXiv feed cards on the homepage
+   ========================================================================== */
+
+.arxiv-feed__item {
+  padding: 1.25em 1.4em;
+  border: 1px solid var(--global-border-color);
+  border-radius: 12px;
+  background: var(--global-surface-color, var(--global-bg-color));
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    border-color: var(--global-dark-border-color);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+}
+
+.arxiv-feed__meta {
+  color: var(--global-text-color-light);
+}
+
+.arxiv-feed__summary {
+  color: var(--global-text-color);
+  opacity: 0.92;
+}
+
+/*
+   Footer
+   ========================================================================== */
+
+.page__footer {
+  border-top: 1px solid var(--global-border-color);
+  margin-top: 4em;
+
+  footer {
+    margin-top: 1.5em;
+  }
+}
+
+/*
+   Selection & scrollbar accents
+   ========================================================================== */
+
+::selection {
+  background: var(--global-accent-soft, rgba(29, 127, 158, 0.2));
+  color: var(--global-text-color);
+}

@@ -14,4 +14,6 @@ Apr 2025 - Jun 2025
 - Led discussion sections for 80+ students; made lecture slides and instructional homework videos; worked with the TA to create practice materials for exams; responded to student questions on Piazza.
 - Applied pedagogy techniques to foster student engagement, promote inclusivity, and clearly explain complex topics.
 
+[View student &amp; TA feedback <i class="fas fa-external-link-alt" aria-hidden="true"></i>](https://docs.google.com/spreadsheets/d/1ckSNwytL9MvQQz66iC4_Wax_kN5QmuAI96U3uY96Iuk/edit?usp=drive_link){: .btn .btn--info target="_blank" rel="noopener"}
+
 
