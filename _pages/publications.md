@@ -14,7 +14,7 @@ author_profile: true
 {% endif %}
 
 <div class="publications-list">
-  <p><strong>Accelerating Time Series Foundation Models with Speculative Decoding</strong> <a href="https://arxiv.org/abs/2512.01094">[link to paper]</a><br> Pranav Subbaraman*, Fang Sun*, Yue Yao, Huacong Tang, Xiao Luo, Yizhou Sun<br>
+  <p><strong>Accelerating Time Series Foundation Models with Speculative Decoding</strong> <a href="https://arxiv.org/abs/2512.01094">[link to paper]</a><br> Pranav Subbaraman*, Fang Sun*, Jinxi Yu*, Yue Yao, Huacong Tang, Xiao Luo, Yizhou Sun<br>
     <em>Accepted at AAAI’26 AI For Time Series Workshop; Under review at 2026 ACM Web Conference</em>
   </p>
 
