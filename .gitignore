@@ -21,3 +21,6 @@ package-lock.json
 
 # Ignore files created by MacOS
 .DS_Store
+
+# Full-resolution originals of the teaching videos (web versions live in videos/)
+videos-originals/

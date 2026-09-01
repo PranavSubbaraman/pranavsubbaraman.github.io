@@ -178,6 +178,7 @@ include:
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
+  - videos-originals
   - .asset-cache
   - .bundle
   - .github

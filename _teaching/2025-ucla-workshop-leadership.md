@@ -9,7 +9,7 @@ location: "Los Angeles, CA"
 hide_meta: true
 ---
 
-Jan 2025 - Present
+Jan 2025 - Mar 2026
 
 Teaching cloud and AI topics through workshops at UCLA’s ACM Cloud chapter.
 

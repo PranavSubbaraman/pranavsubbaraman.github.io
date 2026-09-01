@@ -38,12 +38,14 @@
   </div>
 </div>
 <script>
+  /* NOTE: no line comments in here - the compress layout collapses newlines,
+     which would turn everything after a // into a comment */
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.arxiv-feed__item').forEach(function (item) {
       var summary = item.querySelector('.arxiv-feed__summary');
       var toggle = item.querySelector('.arxiv-feed__toggle');
       if (!summary || !toggle) return;
-      // only offer the toggle when the clamped abstract actually overflows
+      /* only offer the toggle when the clamped abstract actually overflows */
       if (summary.scrollHeight > summary.clientHeight + 1) {
         toggle.hidden = false;
         toggle.addEventListener('click', function () {

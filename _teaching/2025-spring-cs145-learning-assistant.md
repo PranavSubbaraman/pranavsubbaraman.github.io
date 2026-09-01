@@ -16,4 +16,22 @@ Apr 2025 - Jun 2025
 
 [View student &amp; TA feedback <i class="fas fa-external-link-alt" aria-hidden="true"></i>](https://docs.google.com/spreadsheets/d/1ckSNwytL9MvQQz66iC4_Wax_kN5QmuAI96U3uY96Iuk/edit?usp=drive_link){: .btn .btn--info target="_blank" rel="noopener"}
 
+<div class="teaching-videos" markdown="0">
+  <h3 class="teaching-videos__heading">Sample lectures</h3>
+  <div class="teaching-videos__grid">
+    <figure class="teaching-videos__item">
+      <video controls preload="metadata" playsinline src="/videos/cs145-basic-ml-models-lecture.mp4"></video>
+      <figcaption>Basic ML Models</figcaption>
+    </figure>
+    <figure class="teaching-videos__item">
+      <video controls preload="metadata" playsinline src="/videos/cs145-clustering-mixture-models-lecture.mp4"></video>
+      <figcaption>Clustering &amp; Mixture Models</figcaption>
+    </figure>
+    <figure class="teaching-videos__item">
+      <video controls preload="metadata" playsinline src="/videos/cs145-neural-network-lecture.mp4"></video>
+      <figcaption>Neural Networks</figcaption>
+    </figure>
+  </div>
+</div>
+
 
