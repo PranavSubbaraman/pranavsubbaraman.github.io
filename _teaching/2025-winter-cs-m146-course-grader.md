@@ -10,4 +10,5 @@ hide_meta: true
 ---
 
 Jan 2025 - Mar 2025 & Jan 2026 - Mar 2026
-Helped grade homework, exams, and projects for 350 students in CS 146 and 108 students in CS 145
+
+- Helped grade homework, exams, and projects for 350 students in CS 146 and 108 students in CS 145
