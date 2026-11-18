@@ -10,7 +10,7 @@ redirect_from:
 
 {% include base_path %}
 
-Hello! I'm a Master's student in Computer Science at Stanford. I recently graduated from UCLA with a B.S. in Computer Science. I previously was a research intern at Google and a 2x AI/ML intern at Apple. I am interested in anything and everything related to efficient AI.
+Hello! I'm a Master's student in Computer Science at Stanford. I recently graduated from UCLA with a B.S. in Computer Science. I worked as a machine learning engineer at Apple after completing two internships there. I also spent time at Google as a research intern.
 
 Here are my recent first-author papers:
 
